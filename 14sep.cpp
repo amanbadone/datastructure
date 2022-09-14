@@ -1,10 +1,11 @@
 #include<iostream>
+#define MAXSIZE 100
 using namespace std;
 class abc
 {
-int MAXSIZE=100;
 int size;
 int arr[MAXSIZE];
+public:
 void create(int n)
 {
     for(int i=0;i<n;i++)
@@ -12,7 +13,7 @@ void create(int n)
         cin>>arr[i];
     }
     size=n;
-    cout<<"created successfully";
+    cout<<"created successfully\n";
 }
 bool Isempty()
 {
@@ -38,37 +39,41 @@ int find(int k)
 }
 };
 int main()
-{ int v;
-abc a;
-    do
-    {
-        cout<<"Welcome!\n";
-        cout<<"Would you like to perform certain operations on Linear list\n";
-        cout<<"1.Create\n";
-        cout<<"2.IsFull\n";
-        cout<<"3.IsEmpty\n";
-        cout<<"4.Find\n";
+{   int v;
+    abc a;
+
         cin>>v;
         if(v==0)
-        break;
-        switch(v)
-        {
-            case 1:int k;
-                    cin>>k;
-                    a.create(k)
-                    break;
-            case 2: cout<<a.IsEmpty()
-                    break;
-            case 3: cout<<a.Isfull();
-                    break;
-            case 4:int j;
-                    cin>>j
-                    cout<<a.find(j);
-                    break;
-            default:cout<<"Enter valid value\n";
-        }
-    }
+        return 0;
+            do
+            {
+                cout<<"Welcome!\n";
+                cout<<"Would you like to perform certain operations on Linear list\n";
+                cout<<"1.Create\n";
+                cout<<"2.IsFull\n";
+                cout<<"3.IsEmpty\n";
+                cout<<"4.Find\n";
+                int c;
+                cin>>c;
+                        switch(c)
+                        {
+                            case 1:int k;
+                                    cin>>k;
+                                    a.create(k);
+                                    break;
+                            case 2: cout<<a.Isempty();
+                                    break;
+                            case 3: cout<<a.Isfull();
+                                    break;
+                            case 4:int j;
+                                    cin>>j;
+                                    cout<<a.find(j);
+                                    break;
+                            default:cout<<"Enter valid value\n";
+                        }
+                }while(v!=0);
+
     cout<<"the execution is completed";
-    return0;
+    return 0;
     
 }
